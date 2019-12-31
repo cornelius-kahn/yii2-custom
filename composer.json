@@ -1,0 +1,18 @@
+{
+    "name": "yiisoft/yii2-app-basic",
+    "description": "Yii 2 Basic Project Template",
+    "require": {
+        "php": ">=5.4.0",
+        "yidas/yii2-composer-bower-skip": "~2.0.13",
+        "yiisoft/yii2": "~2.0.31",
+        "yiisoft/yii2-smarty": "~2.0.9",
+        "yiisoft/yii2-mongodb": "~2.1.9",
+        "yiisoft/yii2-redis": "~2.0.11"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
+}
