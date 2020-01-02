@@ -1,7 +1,17 @@
 <?php
 
-$params = require __DIR__ . '/params.php';
-$db = require __DIR__ . '/db.php';
+if ( ENVIRONMENT === 'prod' ) {
+    $configPath = __DIR__ . '/';
+} else if ( ENVIRONMENT === 'dev' ) {
+    $configPath = __DIR__ . '/dev/';
+} else {
+    exit();
+}
+
+$params = require $configPath . 'params.php';
+$db = require $configPath . 'db.php';
+$mongodb = require $configPath . 'mongodb.php';
+$redis = require $configPath . 'redis.php';
 $view = require __DIR__ . '/view.php';
 
 $config = [
@@ -28,6 +38,8 @@ $config = [
         ],
         'db' => $db,
         'view' => $view,
+        'redis' => $redis,
+        'mongodb' => $mongodb,
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
